@@ -1,0 +1,8 @@
+create 5 apps
+    - each app have at least any 2 app must have folders and files as well
+    - server to the user without using include() function
+    
+
+create 3 apps
+    - each app have at least 3 folders and files as well
+    - server to the user with the help of include function
