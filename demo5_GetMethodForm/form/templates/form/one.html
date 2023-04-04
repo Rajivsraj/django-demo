@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<!--<form method="get">-->
+<!--    <input type="text" name="fname" placeholder="First Name" value="{{userdata.fn}}"> <br><br>-->
+<!--    <input type="text" name="lname" placeholder="Last Name" value="{{userdata.ln}}"> <br><br>-->
+<!--    <input type="email" name="email"  placeholder="email"  value="{{userdata.email}}"> <br><br>-->
+<!--    <input type="password" name="password" placeholder="Password"  value="{{userdata.pass}}"> <br><br>-->
+<!--    <input type="submit" name="submit" value="Register">-->
+<!--</form>-->
+
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="fname" placeholder="First Name" value="{{userdata.fname}}"> <br><br>
+    <input type="text" name="lname" placeholder="Last Name" value="{{userdata.lname}}"> <br><br>
+    <input type="email" name="email"  placeholder="email"  value="{{userdata.email}}"> <br><br>
+    <input type="password" name="password" placeholder="Password"  value="{{userdata.password}}"> <br><br>
+    <input type="submit" name="submit" value="Register">
+</form>
+</body>
+</html>
