@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+</head>
+<body>
+<h1>hello student</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table border="2" style="text-align: center;">
+        {% for student in data %}
+    <tr>
+
+        <th border="2" style="padding:10px ; background-color: darkorange; color:black">{{ student.id }}</th>
+        <td border="2" style="padding:10px ; background-color: darkorange ; color:black">{{ student.name }}</td>
+        <td border="2" style="padding:10px ; background-color: darkorange; color:black "> {{ student.city }}</td>
+        <td border="2" style="padding:10px ; background-color: darkorange; color:black ">{{ student.age }}</td>
+        <td border="2" style="padding:10px ; background-color: darkorange; color:black ">{{ student.course }}</td>
+
+
+    </tr>
+
+        {% endfor %}
+
+
+
+</table>
+
+</body>
+</html>
