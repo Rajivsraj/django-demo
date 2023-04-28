@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <th>Sr No</th>
+        <th>Fname</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    {% for data in all_students_data  %}
+        <tr>
+            <th>Sr No</th>
+            <th>{{ data.fname }}</th>
+            <th>{{ data.lname }}</th>
+            <th>{{ data.email }}</th>
+            <th>{{ data.password }}</th>
+            <th>{{ data.phone }}</th>
+            <th>
+                <a href="#">Edit</a>
+                <a href="{% url 'stuDelete' data.id %}">Delete</a>
+            </th>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
