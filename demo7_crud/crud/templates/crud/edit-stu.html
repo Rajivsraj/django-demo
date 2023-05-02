@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{{ single_rec.fname }}
+
+{% if data.status|length != 0 %}
+
+    {{ data.status }}
+{% endif %}
+
+<form method="post" action="{% url 'name_update_stu' %}">
+    {% csrf_token %}
+    <input type="text" name="stu_id" value="{{ data.single_rec.id }}" hidden><br><br>
+    Name: <input type="text" name="fname" value="{{ data.single_rec.fname }}"><br><br>
+    Last Name: <input type="text" value="{{ data.single_rec.lname }}" name="lname"><br><br>
+    Email: <input type="text"  value="{{ data.single_rec.email }}" name="email"><br><br>
+    Password: <input type="text" value="{{ data.single_rec.password }}" name="password"><br><br>
+    Phone: <input type="text" value="{{ data.single_rec.phone }}" name="phone"><br><br>
+    <input type="submit" value="Update data" name="update"><br><br>
+</form>
+
+<a href="{% url 'stuList' %}">Student List</a>
+</body>
+</html>

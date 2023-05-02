@@ -6,6 +6,7 @@
 </head>
 <body>
 
+<a href="{% url 'addStu' %}">Add New</a>
 <table border="1">
     <tr>
         <th>Sr No</th>
@@ -25,7 +26,7 @@
             <th>{{ data.password }}</th>
             <th>{{ data.phone }}</th>
             <th>
-                <a href="#">Edit</a>
+                <a href="{% url 'name_edit_stu_view' data.id %}">Edit</a>
                 <a href="{% url 'stuDelete' data.id %}">Delete</a>
             </th>
         </tr>
