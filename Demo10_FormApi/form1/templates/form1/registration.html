@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+{#    {{ frm }}#}
+    {{ frm.as_div }}
+
+{#    tag: {{ frm.stuName.label_tag }}<br>#}
+{#    for value: {{ frm.stuName.id_for_label }}<br>#}
+{#    suffix:{{ frm.stuName.label_suffix }}#}
+
+    <label for="{{ frm.stuName.id_for_label }}">{{ frm.stuName.label }}</label>
+</body>
+</html>
