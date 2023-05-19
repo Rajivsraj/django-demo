@@ -5,13 +5,39 @@
     <title>Registration</title>
 </head>
 <body>
-{#    {{ frm }}#}
-    {{ frm.as_div }}
 
+{#    {{ frm }}#}
+{#    {{ frm.as_div }}#}
 {#    tag: {{ frm.stuName.label_tag }}<br>#}
 {#    for value: {{ frm.stuName.id_for_label }}<br>#}
 {#    suffix:{{ frm.stuName.label_suffix }}#}
+{#    <label for="{{ frm.stuName.id_for_label }}">{{ frm.stuName.label }}</label>#}
+{#<form method="post">#}
+{#{{ frm.as_p }}#}
+{#-------------------------<br>#}
+{#{% csrf_token %}#}
+Tag: {{ frm.fname }}<br>
+{#Value: {{ frm.fname.value }}<br>#}
+{#is Hidden: {{ frm.fname.is_hidden }} <br>#}
+{#is Required: {{ frm.fname.field.required }} <br>#}
+{#MaxLen: {{ frm.fname.field.max_length }} <br>#}
+{#MinLen: {{ frm.fname.field.min_length }} <br>#}
+{#HelpText: {{ frm.fname.help_text }} <br>#}
+{#Field Name: {{ frm.fname.html_name }} <br>#}
+{#<input type="submit" value="Register">#}
+{#<input type="text" value="{{ frm.fname.value }}" class="form" aria-atomic="">#}
+{#    </form>#}
 
-    <label for="{{ frm.stuName.id_for_label }}">{{ frm.stuName.label }}</label>
+<input type="text" name="fname" value="d" required id="id_fname">
+
+
+
+{#User Bootstrap/css to decorate#}
+Fname
+lname
+email
+password
+class
+
 </body>
 </html>

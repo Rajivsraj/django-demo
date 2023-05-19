@@ -2,6 +2,7 @@ from django import forms
 
 
 class StuRegistrationFrmApi(forms.Form):
-    stuName = forms.CharField(initial="Sohan")
+    fname = forms.CharField(initial="Sohan", max_length=20, min_length=2)
+
     lname =forms.CharField(initial="Singh")
     email = forms.EmailField()

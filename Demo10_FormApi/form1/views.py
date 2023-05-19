@@ -19,7 +19,7 @@ def registration(request):
     # data={
     #     "fname": "Lalit",
     #     "lname": "Suraj",
-    #     "email": "lsdjf",
+    #     "email": "lsdjf@lsdf.sdf"
     # }
     # frm = StuRegistrationFrmApi(data) # using this we can add prefix to the id value of label attribute
     # frm = StuRegistrationFrmApi() # using this we can add prefix to the id value of label attribute
@@ -27,6 +27,22 @@ def registration(request):
     # y = frm.is_valid()  # if it return true if data is valid/correct
     # print(x)
     # print(y)
+
+    # frm = StuRegistrationFrmApi() # using this we can add prefix to the id value of label attribute
+
+    # frm = StuRegistrationFrmApi(data) # using this we can add prefix to the id value of label attribute
+    # if frm.is_bound:
+    #     print("ok hai")
+    #     if frm.is_valid():
+    #         print("data also valid")
+
+
+    # a Look of form validation
+    # frm = StuRegistrationFrmApi() # using this we can add prefix to the id value of label attribute
+    # if request.method == "POST":
+    #     print(request.POST)
+    #     fname = request.POST.get("lname")
+    #     frm = StuRegistrationFrmApi(request.POST)
 
     frm = StuRegistrationFrmApi() # using this we can add prefix to the id value of label attribute
 
