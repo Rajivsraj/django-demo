@@ -44,26 +44,17 @@ def registration(request):
     #     fname = request.POST.get("lname")
     #     frm = StuRegistrationFrmApi(request.POST)
 
-    # frm = StuRegistrationFrmApi() # using this we can add prefix to the id value of label attribute
+    frm = StuRegistrationFrmApi() # using this we can add prefix to the id value of label attribute
 
 
-    # if request.method == "POST":
-    #     # fname = request.POST.get("fname")
-    #     # password = request.POST.get("password")
-    #     # city = request.POST.get("city")
-    #
-    #     # print(f"Fname: {fname} Pass: {password} city {city}")
-    #     print(request.POST)
-    #     frm = StuRegistrationFrmApi(request.POST)
-
-    # data = {
-    #     "fname": "Rahul",
-    #     "lname": "Kumar"
-    # }
-    # frm = StuRegistrationFrmApi(initial=data)
-    #
-    frm = StuRegistrationFrmApi()
     if request.method == "POST":
-        frm = StuRegistrationFrmApi(data=request.POST)
+        # fname = request.POST.get("fname")
+        # password = request.POST.get("password")
+        # city = request.POST.get("city")
+
+        # print(f"Fname: {fname} Pass: {password} city {city}")
         print(request.POST)
+        frm = StuRegistrationFrmApi(request.POST)
+
+
     return render(request, "form1/registration.html", context={"frm": frm})

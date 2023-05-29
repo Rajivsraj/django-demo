@@ -9,22 +9,14 @@
 
 {# WIDGETS #}
 {#{{ frm.as_p }}#}
-<form method="post" novalidate>
-
-    {% csrf_token %}
-    {{ frm.as_p }}
-{#    {{ frm.fname }}#}
-{#    {{ frm.fname.errors }}#}
-{#    {{ frm.fname.errors }}#}
-
-{#    {{ frm.fname.widget }}#}
-    {#    {{ frm.errors }}#}
-{#{% for f in frm.visible_fields %}#}
-{#    <p>#}
-{#        {{ f.label}}#}
-{#        {{ f }}#}
-{#    </p>#}
-{#{% endfor %}#}
+<form method="post">
+{% csrf_token %}
+{% for f in frm.visible_fields %}
+    <p>
+        {{ f.label}}
+        {{ f }}
+    </p>
+{% endfor %}
 <input type="submit" value="Submit">
 </form>
 {#{{ frm.as_p }}#}

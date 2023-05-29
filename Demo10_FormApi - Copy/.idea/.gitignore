@@ -1,0 +1,6 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../:\ABC\DJANGO\0800\Demo10_FormApi\.idea/dataSources/
+/dataSources.local.xml
