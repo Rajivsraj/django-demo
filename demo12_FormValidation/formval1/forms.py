@@ -16,7 +16,6 @@ class RegFormCls(forms.Form):
         elif re.findall("\d", name):
             raise ValidationError("Only Chars required")
 
-
     def clean_username(self):
         usrnm = self.cleaned_data["username"]
 
