@@ -1,0 +1,73 @@
+{% extends "crud/base.html" %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 shadow-lg shadow px-4 pb-3">
+                <h3 class="text-center">Add Student</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control form-control-sm" id="name" name="name"
+                               aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control form-control-sm" id="email" name="email"
+                               aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control form-control-sm" id="password" name="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control form-control-sm" id="phone" name="phone">
+                    </div>
+                    {#                    <div class="mb-3 form-check">#}
+                    {#                        <input type="checkbox" class="form-check-input" id="exampleCheck1">#}
+                    {#                        <label class="form-check-label" for="exampleCheck1">Check me out</label>#}
+                    {#                    </div>#}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-9">
+                <h1 class="text-center">Student Details</h1>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Phone</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
