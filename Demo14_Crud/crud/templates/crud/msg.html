@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message</title>
+</head>
+<body>
+{% if messages %}
+    {% for msg in messages %}
+        {{ msg }}
+    {% endfor %}
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {{ frm.as_p }}
+    <button type="submit" value="Submit">Submit</button>
+</form>
+</body>
+</html>

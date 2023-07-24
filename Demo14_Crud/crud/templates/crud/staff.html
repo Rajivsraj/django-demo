@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff</title>
+</head>
+<body>
+<style>
+    .success{
+        color: green;
+    }
+</style>
+{% if messages %}
+    {% for msg in messages %}
+        <span class="{{ msg.tags }}">{{ msg }}</span>
+    {% endfor %}
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add Staff">
+</form>
+</body>
+</html>
