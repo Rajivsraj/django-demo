@@ -1,13 +1,15 @@
 from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-
+from .forms import CustomSignupForm
 
 # Create your views here.
 def registration(request):
-    frm = UserCreationForm()
+    # frm = UserCreationForm()
+    frm = CustomSignupForm()
     if request.method == "POST":
-        frm = UserCreationForm(request.POST)
+        # frm = UserCreationForm(request.POST)
+        frm = CustomSignupForm(request.POST)
         if frm.is_valid():
             frm.save()
             messages.success(request, "User Added Successfully")
