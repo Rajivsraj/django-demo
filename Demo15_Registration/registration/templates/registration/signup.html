@@ -32,6 +32,10 @@
         {{ fm.label_tag }} {{ fm }} {{ fm.errors|striptags }} <br><br>
     {% endfor %}
     <input type="submit" value="Register">
+
+    <br>
+    <br>
+    <a href="{% url 'login' %}"> Login </a>
 </form>
 
 </body>

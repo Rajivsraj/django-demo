@@ -1,5 +1,8 @@
-from django.shortcuts import render
-# from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect, HttpResponseRedirect
+# AuthenticationForm is used for login form
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import CustomSignupForm
 
@@ -16,3 +19,19 @@ def registration(request):
         else:
             messages.error(request, "user Cant be added")
     return render(request, "registration/signup.html", context={"frm": frm})
+
+
+def user_login(request):
+    frm = AuthenticationForm()
+
+    if request.method == "POST":
+        frm = AuthenticationForm(request=None, data=request.POST)
+        print(frm)
+        if frm.is_valid():
+            usrnm = frm.cleaned_data.get("username")
+            password = frm.cleaned_data.get("password")
+            usr = authenticate(username=usrnm, password=password)
+            login(request, usr)     # session create
+            return HttpResponseRedirect("/admin/")
+
+    return render(request, "registration/login.html", context={"frm": frm})
