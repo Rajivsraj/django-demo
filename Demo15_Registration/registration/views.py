@@ -31,7 +31,21 @@ def user_login(request):
             usrnm = frm.cleaned_data.get("username")
             password = frm.cleaned_data.get("password")
             usr = authenticate(username=usrnm, password=password)
-            login(request, usr)     # session create
-            return HttpResponseRedirect("/admin/")
+            if usr is not None:
+                login(request, usr)     # session create
+                # return HttpResponseRedirect("/admin/")
+                messages.success(request, "You're successfully  logged in")
+                return redirect("dashboard")
 
     return render(request, "registration/login.html", context={"frm": frm})
+
+
+def dashboard(request):
+    if request.user.is_authenticated:
+        return render(request, "registration/dashboard.html", {"name": request.user})
+    else:
+        redirect("login")
+
+def logut(request):
+    logout(request)
+    return redirect("login")
