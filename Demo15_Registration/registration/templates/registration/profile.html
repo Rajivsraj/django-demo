@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+<h1>Welcome {{ name }}</h1>
+
+<form novalidate method="post">
+    {% csrf_token %}
+
+    {% for frm in form %}
+        {{ frm.label_tag }} {{ frm }} {{ frm.errors }} <br>
+    {% endfor %}
+    <button type="submit">Update Profile</button>
+
+    <br><br>
+
+    <a href="{% url 'registration' %}">Signup</a>
+</form>
+
+<br>
+<br>
+<br>
+<a href="{% url 'logout' %}">Logout</a> | <a href="{% url 'password-reset' %}">Rest Password </a>
+</body>
+</html>

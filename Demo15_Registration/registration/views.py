@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import login, authenticate, logout, update_session_auth_hash
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import CustomSignupForm
+from .forms import CustomSignupForm, UserProfileForm
 
 # Create your views here.
 def registration(request):
@@ -61,3 +61,13 @@ def resetPassword(request):
             frm.save()
             update_session_auth_hash(request, frm.user)
     return render(request, "registration/reset-password.html", context={"form": frm})
+
+
+def user_profile(request):
+    frm = UserProfileForm(instance=request.user)
+    if request.method == "POST":
+        # request.user.is_superuser == True
+        frm = UserProfileForm(request.POST, instance=request.user)
+        if frm.is_valid():
+            frm.save()
+    return render(request, "registration/profile.html", context={"form": frm})
