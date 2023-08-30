@@ -2,6 +2,8 @@ from django.shortcuts import render , redirect , HttpResponse
 from django.contrib.auth.forms import UserCreationForm , AuthenticationForm 
 from django.contrib.auth import login , logout , authenticate
 from django . contrib import messages
+from .forms import customlogin_form
+from django . contrib .auth . models import User
 # Create your views here.
 
 def resgister(request):
@@ -22,21 +24,30 @@ def user_login(request):
         messages.info(request, "You  are alreday logged in")
         return redirect("dashboard")
     else:
-        frm = AuthenticationForm()
+        msg = {}
+        frm = customlogin_form()
         if request.method == "POST":
-            frm = AuthenticationForm(request = None , data = request.POST)
+            frm = customlogin_form(request.POST)
             if frm.is_valid():
-                username = frm.cleaned_data.get("username")
-                password = frm.cleaned_data.get("password")
+                usern = frm.cleaned_data.get("username")
+                passwor = frm.cleaned_data.get("password")
                 # login(request , request.user) 
-                usr = authenticate(username = username , password = password)
+                # chechk = User.objects.filter(username = usern , password = passwor)
+                usr = authenticate(username = usern , password = passwor)
                 if usr is not None:
-                    request.session["username"] = "Abhishek"
-                    request.session["password"] = "google"
-                    login(request, usr)
-                    messages.success(request , "Logged in succesfully")
-                    return redirect("Login")
-    return render(request , "login.html" , context={"frm" : frm})
+                    request.session["username"] = usr.username
+                    request.session["password"] = usr.password
+
+                    if request.session.get("username") == usr.username:
+                        login(request, usr)
+                        messages.success(request , "Logged in succesfully")
+                        print("jdkfhgfgh")
+                        return redirect("dashboard")
+                    if request.session.get("username") != usr.username:
+                        print("can`t")
+                        return redirect("Login")
+                    
+    return render(request , "login.html" , context={"frm" : frm , "msg" :msg})
 
 def dashboard(request):
     if request.user.is_authenticated:
@@ -44,13 +55,13 @@ def dashboard(request):
         password = request.session.get("password")
 
         session = request.session
-        return render(request , "dashboard.html" , context={"usrname" : username , "password" : password , "session" : session})
+        return render(request , "dashboard.html" , context={"usrname" : username , "password" : password, "session" : session})
     else:
         return redirect("Login")
 def user_logout(request):
     msg = {}
     del request.session["username"]
-    del request.session["password"]
+    # del request.session["password"]
     usrnm = request.session.get("username")
     msg["sucess"] = "Logout Secessfully"
     logout(request)

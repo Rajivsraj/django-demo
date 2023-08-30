@@ -12,6 +12,11 @@
     {% endfor %}
 {% endif %}
 
+{% if msg.error %}
+
+            <p class="{{ msg.tags }}"> {{ msg.error}}</p>
+{% endif %}
+
 <form novalidate method="post">
     {% csrf_token %}
 
