@@ -39,7 +39,6 @@ def user_login(request):
                     request.session["password"] = usr.password
 
                     if request.session.get("username") == usr.username:
-                        login(request, usr)
                         messages.success(request , "Logged in succesfully")
                         print("jdkfhgfgh")
                         return redirect("dashboard")
@@ -50,14 +49,12 @@ def user_login(request):
     return render(request , "login.html" , context={"frm" : frm , "msg" :msg})
 
 def dashboard(request):
-    if request.user.is_authenticated:
         username = request.session.get("username")
         password = request.session.get("password")
 
         session = request.session
         return render(request , "dashboard.html" , context={"usrname" : username , "password" : password, "session" : session})
-    else:
-        return redirect("Login")
+
 def user_logout(request):
     msg = {}
     del request.session["username"]
