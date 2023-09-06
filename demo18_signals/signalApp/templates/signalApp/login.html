@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+{#{{ login_frm }}#}
+{% if login_frm.non_field_errors %}
+    {% for err in login_frm.non_field_errors %}
+        {{ err }}
+    {% endfor %}
+{% endif %}
+<form method="post" novalidate autocomplete="off" >
+{% csrf_token %}
+{% for frm in login_frm %}
+     {{ frm.label_tag }}<br>{{ frm }}<br><br>
+{% endfor %}
+<input type="submit" value="Login">
+</form>
+
+
+{#{{ request.session.keys }}#}
+</body>
+</html>
