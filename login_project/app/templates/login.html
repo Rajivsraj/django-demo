@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="messages">
+        {% if frm.non_field_errors %}
+            {% for frm in frm.non_field_errors %}
+                {{ frm }}
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {% for x in frm %}
+            {{ x.label_tag }} <br> <br> {{x}} <br> <br> {{x.errors}}
+        {% endfor %}
+
+        <input type="submit" value= "Login">
+
+        <a href="{% url 'register' %}"></a>
+    </form>
+</body>
+</html>
