@@ -4,6 +4,9 @@ from django.contrib.auth.forms import AuthenticationForm  , UserCreationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+
+
+
 # Create your views here.
 def register(request):
     frm = UserCreationForm()
@@ -18,6 +21,7 @@ def register(request):
             messages.error(request , "Can`t be Registered")
     return render(request , "register.html" , context={"frm" :frm})
 
+
 def login_user(request):
     
     if request.user.is_authenticated:
@@ -26,18 +30,20 @@ def login_user(request):
     else:
         frm = AuthenticationForm() 
         if request.method == "POST":
-            frm = AuthenticationForm(request = None , data = request.POST)
+            frm = AuthenticationForm(request=None, data=request.POST)
             if frm.is_valid():
                 usrnm = frm.cleaned_data.get("username")
                 passwo = frm.cleaned_data.get("password")
-                usr = authenticate(username = usrnm , password = passwo)
+                print("au b")
+                usr = authenticate(username=usrnm, password=passwo)
+                print("au af")
                 if usr is not None:
                     login(request, usr)
-                    print(usr)
-                    print(usr.password)
-                    messages.add_message(request , messages.SUCCESS , "Loged in Succsessfully")
-                    return  redirect("dashboard")
-    return render(request , "login.html" , context={"frm" : frm})
+
+                    messages.add_message(request, messages.SUCCESS, "Loged in Succsessfully")
+                    return redirect("dashboard")
+    return render(request, "login.html", context={"frm": frm})
+
 
 def logout_user(request):
     logout(request)
