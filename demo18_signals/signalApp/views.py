@@ -11,6 +11,8 @@ from django.contrib.auth.hashers import check_password, make_password
 # print(b)
 # Create your views here.
 def user_login(request):
+    if request.session.get("username"):
+        return redirect("dashboard")
     login_frm = LoginForm()
     if request.method == "POST":
         login_frm = LoginForm(data=request.POST)
