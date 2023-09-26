@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "middleware_app",
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -48,8 +47,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "middleware_app.mymiddleware.testing_middleware",
+    # "middleware_app.mymiddleware.testing_middleware",
+    # "middleware_app.mymiddleware.ClassMiddleware",
+    # "middleware_app.mymiddleware.ClassMiddleware2",
+    "middleware_app.mymiddleware.ClassMiddleware3",
 ]
+
 
 ROOT_URLCONF = 'demo19_middleware.urls'
 
