@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<!-- 
+{% if messages %}
+    {% for msg in messages %}
+        {{ msg.tags }} - {{ msg }}
+    {% endfor %}
+{% endif %}  -->
+
+
+
+
+    <form action="" method="post" class="container">
+        <h1>Welcome {{ name }}</h1> <br><br>
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="input-data">
+                        <input type="text" required value="{{frm.first_name}}">
+                        
+                        <label for="">First Name</label>
+                    </div> <br> <br>
+                    <div class="input-data">
+                        <input type="text" required value="{{frm.last_name}}">
+                        
+                        <label for="">Last Name</label>
+                    </div> <br>
+                </div> <br>
+                <div class="form-row">
+                    <div class="input-data">
+                        <input type="text" value="{{frm.email}}" required>
+                        
+                        <label for="">Email Address</label>
+                    </div> <br>
+                    <div class="input-data">
+                        <input type="text" value="{{frm.date_joined}}" required>
+                        
+                        <label for="">Joining Date</label>
+                    </div> <br>
+                </div> <br>
+                <div class="form-row">
+                    <div class="input-data">
+                        <input type="text" value="{{frm.is_superuser}}" required>
+                
+                        <label for="">Is admin</label>
+                    </div> <br>
+                    <div class="input-data">
+                        <input type="text" value="{{frm.is_active}}" required>
+                
+                        <label for="">Is Active </label>
+                    </div> <br>
+                </div> <br>
+                <br>
+                <br>
+                <br>
+                <a href="{% url 'logout' %}" style="text-decoration: none; color: blueviolet;"> Logout </a>
+                <br> <br>
+                <a href="{% url 'reset_password' %}" style="text-decoration: none;"> Reset Password </a>
+                <br> <br>
+                <a href="{% url 'user_profile' %}" style="text-decoration: none;"> Profile </a>
+                <br> <br>
+    </form><br><br>
+
+</body><br>
+
+
+</html>
