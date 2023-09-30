@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .success{
+            color: green;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+{% if messages %}
+    {% for msg in messages %}
+        {% if msg.tags == "success" %}
+            <p class="{{ msg.tags }}"> {{ msg }}</p>
+        {% elif msg.tags == "error" %}
+            <p class="{{ msg.tags }}"> {{ msg }}</p>
+        {% else %}
+            <p>Nothing  happend</p>
+        {% endif %}
+        {{ msg.tags }}
+    {% endfor %}
+{% endif %}
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% for fm in frm %}
+        {{ fm.label_tag }} {{ fm }} {{ fm.errors|striptags }} <br><br>
+    {% endfor %}
+    <input type="submit" value="Register">
+
+    <br>
+    <br>
+    {% comment %}  {% endcomment %}
+    <a href="{% url 'login' %}" style="text-decoration: none; color: blueviolet;"> Login </a>
+</form>
+
+</body>
+</html>
