@@ -27,10 +27,26 @@ def query_set(request):
     # all_emp = Employee.objects.order_by("id").reverse()
     # all_emp = Employee.objects.order_by("name").reverse()
     # all_emp = Employee.objects.order_by("name").reverse()[5:10]
-    all_emp = Employee.objects.order_by("id")
-    for x in all_emp:
-        print(x.name[:3])
+    # all_emp = Employee.objects.order_by("id")
+    # for x in all_emp:
+    #     print(x.name[:3])
     # print(all_emp)
     # print(all_emp.query)
 
+    # all_emp = Employee.objects.values()
+    # all_emp = Employee.objects.values("name", "city")
+    # all_emp = Employee.objects.values(name=upperCase("name")) # need to check again
+    # print(all_emp)
+    # print(all_emp.query)
+
+    all_emp = Employee.objects.values_list()
+    print(all_emp)
+    # for x in all_emp:
+    #     for y in x:
+    #         print(y, end=" ")
+    #
+    #     print()
+    print(all_emp.query)
     return render(request, "app1/data.html", context={"employees": all_emp})
+
+
