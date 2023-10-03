@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Employee, Student
+from .models import Employee, Employee2
 
 
 # Register your models here.
@@ -7,6 +7,6 @@ from .models import Employee, Student
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ["emp_id", "name", "salary", "city"]
 
-@admin.register(Student)
+@admin.register(Employee2)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ["stu_id", "name", "result", "city"]
+    list_display = ["emp_id", "name", "salary", "city"]
