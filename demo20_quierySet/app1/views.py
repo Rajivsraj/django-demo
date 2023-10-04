@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Employee
+from .models import Employee, Employee2
 
 
 # Create your views here.
@@ -39,14 +39,31 @@ def query_set(request):
     # print(all_emp)
     # print(all_emp.query)
 
-    all_emp = Employee.objects.values_list()
-    print(all_emp)
+    # all_emp = Employee.objects.values_list()
+    # print(all_emp)
     # for x in all_emp:
     #     for y in x:
     #         print(y, end=" ")
     #
     #     print()
-    print(all_emp.query)
-    return render(request, "app1/data.html", context={"employees": all_emp})
+    # print(all_emp.query)
+    # st = set()
+    # all_emp = Employee.objects.all()
+    # all_emp = list(s)
+    # print(all_emp.query)
+
+    # all_emp = Employee.objects.dates("date", kind="month")
+    # print(all_emp)
+    # print(all_emp.query)
+
+    tbl1 = Employee.objects.values_list("name")
+    tbl2 = Employee2.objects.values_list("name")
+    all_emp = tbl1.union(tbl2, all=True)
+    print(all_emp)
+    print()
+    # print(all_emp.query)
+    print(tbl1)
+    print(tbl2)
+    return render(request, "app1/data.html", context={"employees": ""})
 
 
