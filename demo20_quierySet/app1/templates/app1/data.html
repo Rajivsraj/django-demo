@@ -13,28 +13,46 @@
         <td>City</td>
         <td>Date</td>
     </tr>
-    {% for employee in employees.values %}
-        <tr>
-            <td>{{ employee.id }}</td>
-            <td>{{ employee.emp_id }}</td>
-            <td>{{ employee.name | slice:":3" | capfirst}}</td>
-            <td>{{ employee.salary }}</td>
-            <td>{{ employee.city }}</td>
-            <td>{{ employee.date }}</td>
-        </tr>
-    {% endfor %}
-
-{#        {% for employee in employees %}#}
+{#    {% for employee in employees.values %}#}
 {#        <tr>#}
-{#            {% for emp in employee %}#}
-{#            <td>{{ emp }}</td>#}
+{#            <td>{{ employee.id }}</td>#}
 {#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
 {#            <td>{{ employee.salary }}</td>#}
 {#            <td>{{ employee.city }}</td>#}
-{#            {% endfor %}#}
 {#        </tr>#}
 {#    {% endfor %}#}
+
+
+{% comment %} # ===========================================
+this is when it returns values in tuple and we have used values_list instead of values {% endcomment %}
+
+        {% for employee in employees %}
+        <tr>
+            {% for emp in employee %}
+            <td>{{ emp }}</td>
+{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
+{#            <td>{{ employee.salary }}</td>#}
+{#            <td>{{ employee.city }}</td>#}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+{% comment %} # ===========================================
+this is when it returns values in dictionary and we have used values instead of values_list {% endcomment %}
+
+        {% comment %} {% for x in employees %}
+        <tr>
+                <td>{{ x.id }}</td>
+                <td>{{ x.emp_id }}</td>
+                <td>{{ x.name | slice:":3" | capfirst}}</td>
+                <td>{{ x.salary }}</td>
+                <td>{{ x.city }}</td>
+                <td>{{ x.date }}</td>
+        </tr>
+        {% endfor %} {% endcomment %}
 </table>
+{% comment %} ======================================== {% endcomment %}
+
 
 {#<table border="1">#}
 {#    <tr>#}

@@ -58,12 +58,16 @@ def query_set(request):
 
     tbl1 = Employee.objects.values_list("name")
     tbl2 = Employee2.objects.values_list("name")
-    all_emp = tbl1.union(tbl2, all=True)
+    all_emp = Employee.objects.all().values_list("name").union(Employee2.objects.all().values_list("name")) # This is working and it returns tuple inside the queryset
+    # all_emp = Employee.objects.all().values("name").union(Employee2.objects.all().values("name")) # This is working and it returns tuple inside the queryset
+    # all_emp = tbl1.union(tbl2, all=True) # This is not working
     print(all_emp)
     print()
+    print()
+    print(end='==========================================')
     # print(all_emp.query)
-    print(tbl1)
-    print(tbl2)
-    return render(request, "app1/data.html", context={"employees": ""})
+    # print(tbl1) 
+    # print(tbl2)
+    return render(request, "app1/data.html", context={"employees": all_emp})
 
 
