@@ -58,15 +58,35 @@ def query_set(request):
     # print(all_emp)
     # print(all_emp.query)
 
+# ============================================================= Union ======================================================
+
     # tbl1 = Employee.objects.values_list("name")
     # tbl2 = Employee2.objects.values_list("name")
-    # all_emp = tbl1.union(tbl2, all=True)
+    # all_emp = Employee.objects.all().values_list("name").union(Employee2.objects.all().values_list("name")) # This is inline and it returns tuple inside the queryset
+    # all_emp = Employee.objects.all().values("name").union(Employee2.objects.all().values("name")) # This is inline and it returns key value pair inside the queryset
+
+    # all_emp = tbl1.union(tbl2, all=True) It returns all the values including duplicate 
+    # all_emp = tbl1.union(tbl2, all=False) It returns only the unique values excluding duplicate 
     # print(all_emp)
     # print()
-    # # print(all_emp.query)
-    # print(tbl1)
-    # print(tbl2)
+    # print()
+
     # return render(request, "app1/data.html", context={"employees": ""})
+
+# ============================================================= UnionEnd ======================================================
+
+# ============================================================= Intersection ======================================================
+    # tbl1 = Employee.objects.values_list("name")
+    # tbl2 = Employee2.objects.values_list("name")
+    # all_emp = tbl1.intersection(tbl2) # It returns tuple inside the queryset
+    # all_emp = Employee.objects.all().values("name").intersection(Employee2.objects.all().values("name")) # This is inline and it returns key value pair inside the queryset
+
+    # print(all_emp)
+    # print()
+    # print()
+
+# ============================================================= IntersectionEnd ====================================================
+
 
     # get()
     # ==============
@@ -89,4 +109,4 @@ def query_set(request):
     # sq = Employee.objects.exists()
     # sq = Group.objects.exists() # check table have some data or not
     # print(sq)
-    return render(request, "app1/data.html", context={"single": sq})
+    return render(request, "app1/data.html", context={"single": ""})
