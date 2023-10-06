@@ -58,6 +58,7 @@ def query_set(request):
     # print(all_emp)
     # print(all_emp.query)
 
+<<<<<<< HEAD
 # ============================================================= Union ======================================================
 
     # tbl1 = Employee.objects.values_list("name")
@@ -86,6 +87,21 @@ def query_set(request):
     # print()
 
 # ============================================================= IntersectionEnd ====================================================
+=======
+    tbl1 = Employee.objects.values_list("name")
+    tbl2 = Employee2.objects.values_list("name")
+    all_emp = Employee.objects.all().values_list("name").union(Employee2.objects.all().values_list("name")) # This is working and it returns tuple inside the queryset
+    # all_emp = Employee.objects.all().values("name").union(Employee2.objects.all().values("name")) # This is working and it returns tuple inside the queryset
+    # all_emp = tbl1.union(tbl2, all=True) # This is not working
+    print(all_emp)
+    print()
+    print()
+    print(end='==========================================')
+    # print(all_emp.query)
+    # print(tbl1) 
+    # print(tbl2)
+    return render(request, "app1/data.html", context={"employees": all_emp})
+>>>>>>> 42e78203dc957667b588556e9f8428921b89758f
 
 
     # get()
