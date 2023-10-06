@@ -3,22 +3,54 @@
         <title>Query Set</title>
     </head>
 <body>
+{##}
+{#<table border="1">#}
+{#    <tr>#}
+{#        <td>pk</td>#}
+{#        <td>Id</td>#}
+{#        <td>Name</td>#}
+{#        <td>Salary</td>#}
+{#        <td>City</td>#}
+{#        <td>Date</td>#}
+{#    </tr>#}
+{#    {% for employee in employees.values %}#}
+{#        <tr>#}
+{#            <td>{{ employee.id }}</td>#}
+{#            <td>{{ employee.emp_id }}</td>#}
+{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
+{#            <td>{{ employee.salary }}</td>#}
+{#            <td>{{ employee.city }}</td>#}
+{#            <td>{{ employee.date }}</td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
 
-<table border="1">
-    <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>Salary</td>
-        <td>City</td>
-    </tr>
-    {% for employee in employees %}
-        <tr>
-            <td>{{ employee.id }}</td>
-            <td>{{ employee.name | slice:":3" | capfirst}}</td>
-            <td>{{ employee.salary }}</td>
-            <td>{{ employee.city }}</td>
-        </tr>
-    {% endfor %}
+{#        {% for employee in employees %}#}
+{#        <tr>#}
+{#            {% for emp in employee %}#}
+{#            <td>{{ emp }}</td>#}
+{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
+{#            <td>{{ employee.salary }}</td>#}
+{#            <td>{{ employee.city }}</td>#}
+{#            {% endfor %}#}
+{#        </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+
+{#<table border="1">#}
+{#    <tr>#}
+{#        <td>Id</td>#}
+{#        <td>Name</td>#}
+{#        <td>Salary</td>#}
+{#        <td>City</td>#}
+{#    </tr>#}
+{#    {% for employee in employees %}#}
+{#        <tr>#}
+{#            <td>{{ employee.id }}</td>#}
+{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
+{#            <td>{{ employee.salary }}</td>#}
+{#            <td>{{ employee.city }}</td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
 
     {#    {% for employee in employees.values %}#}
 {#        <tr>#}
@@ -28,7 +60,30 @@
 {#            <td>{{ employee.city }}</td>#}
 {#        </tr>#}
 {#    {% endfor %}#}
-</table>
+{#</table>#}
 
+
+{{ error }}
+
+<table border="1">
+    <tr>
+        <td>pk</td>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Salary</td>
+        <td>City</td>
+        <td>Date</td>
+    </tr>
+
+        <tr>
+            <td>{{ single.id }}</td>
+            <td>{{ single.emp_id }}</td>
+            <td>{{ single.name | slice:":3" | capfirst}}</td>
+            <td>{{ single.salary }}</td>
+            <td>{{ single.city }}</td>
+            <td>{{ single.date }}</td>
+        </tr>
+
+</table>
 </body>
 </html>
