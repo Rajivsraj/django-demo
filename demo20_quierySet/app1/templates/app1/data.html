@@ -1,70 +1,37 @@
 <html>
-    <head>
-        <title>Query Set</title>
-    </head>
+
+<head>
+    <title>Query Set</title>
+</head>
+
 <body>
-{##}
-{#<table border="1">#}
-{#    <tr>#}
-{#        <td>pk</td>#}
-{#        <td>Id</td>#}
-{#        <td>Name</td>#}
-{#        <td>Salary</td>#}
-{#        <td>City</td>#}
-{#        <td>Date</td>#}
-{#    </tr>#}
-{#    {% for employee in employees.values %}#}
-{#        <tr>#}
-{#            <td>{{ employee.id }}</td>#}
-{#            <td>{{ employee.emp_id }}</td>#}
-{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
-{#            <td>{{ employee.salary }}</td>#}
-{#            <td>{{ employee.city }}</td>#}
-{#            <td>{{ employee.date }}</td>#}
-{#        </tr>#}
-{#    {% endfor %}#}
 
-{#        {% for employee in employees %}#}
-{#        <tr>#}
-{#            {% for emp in employee %}#}
-{#            <td>{{ emp }}</td>#}
-{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
-{#            <td>{{ employee.salary }}</td>#}
-{#            <td>{{ employee.city }}</td>#}
-{#            {% endfor %}#}
-{#        </tr>#}
-{#    {% endfor %}#}
-{#</table>#}
+<<<<<<< HEAD
+    <table border="1">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Salary</td>
+            <td>City</td>
+        </tr>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name | slice:":3" | capfirst}}</td>
+            <td>{{ employee.salary }}</td>
+            <td>{{ employee.city }}</td>
+        </tr>
+        {% endfor %}
 
-{#<table border="1">#}
-{#    <tr>#}
-{#        <td>Id</td>#}
-{#        <td>Name</td>#}
-{#        <td>Salary</td>#}
-{#        <td>City</td>#}
-{#    </tr>#}
-{#    {% for employee in employees %}#}
-{#        <tr>#}
-{#            <td>{{ employee.id }}</td>#}
-{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
-{#            <td>{{ employee.salary }}</td>#}
-{#            <td>{{ employee.city }}</td>#}
-{#        </tr>#}
-{#    {% endfor %}#}
-
-    {#    {% for employee in employees.values %}#}
-{#        <tr>#}
-{#            <td>{{ employee.id }}</td>#}
-{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
-{#            <td>{{ employee.salary }}</td>#}
-{#            <td>{{ employee.city }}</td>#}
-{#        </tr>#}
-{#    {% endfor %}#}
-{#</table>#}
-
-
-{{ error }}
-
+        {# {% for employee in employees.values %}#}
+        {# <tr>#}
+            {# <td>{{ employee.id }}</td>#}
+            {# <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
+            {# <td>{{ employee.salary }}</td>#}
+            {# <td>{{ employee.city }}</td>#}
+        {# </tr>#}
+        {# {% endfor %}#}
+=======
 <table border="1">
     <tr>
         <td>pk</td>
@@ -74,16 +41,79 @@
         <td>City</td>
         <td>Date</td>
     </tr>
+{#    {% for employee in employees.values %}#}
+{#        <tr>#}
+{#            <td>{{ employee.id }}</td>#}
+{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
+{#            <td>{{ employee.salary }}</td>#}
+{#            <td>{{ employee.city }}</td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
 
+
+{% comment %} # ===========================================
+this is when it returns values in tuple and we have used values_list instead of values {% endcomment %}
+
+        {% for employee in employees %}
         <tr>
-            <td>{{ single.id }}</td>
-            <td>{{ single.emp_id }}</td>
-            <td>{{ single.name | slice:":3" | capfirst}}</td>
-            <td>{{ single.salary }}</td>
-            <td>{{ single.city }}</td>
-            <td>{{ single.date }}</td>
+            {% for emp in employee %}
+            <td>{{ emp }}</td>
+{#            <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
+{#            <td>{{ employee.salary }}</td>#}
+{#            <td>{{ employee.city }}</td>#}
+            {% endfor %}
         </tr>
+        {% endfor %}
 
+{% comment %} # ===========================================
+this is when it returns values in dictionary and we have used values instead of values_list {% endcomment %}
+
+        {% comment %} {% for x in employees %}
+        <tr>
+                <td>{{ x.id }}</td>
+                <td>{{ x.emp_id }}</td>
+                <td>{{ x.name | slice:":3" | capfirst}}</td>
+                <td>{{ x.salary }}</td>
+                <td>{{ x.city }}</td>
+                <td>{{ x.date }}</td>
+        </tr>
+        {% endfor %} {% endcomment %}
 </table>
+{% comment %} ======================================== {% endcomment %}
+
+>>>>>>> 42e78203dc957667b588556e9f8428921b89758f
+
+        {% comment %} # ===========================================
+        this is when it returns values in tuple and we have used values_list in views.py file instead of values {% endcomment %}
+
+        {% for employee in employees %}
+        <tr>
+            {% for emp in employee %}
+            <td>{{ emp }}</td>
+            {# <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
+            {# <td>{{ employee.salary }}</td>#}
+            {# <td>{{ employee.city }}</td>#}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+        {% comment %} # ===========================================
+        this is when it returns values in dictionary and we have used values in views.py file instead of values_list {% endcomment %}
+
+        {% comment %} {% for x in employees %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.emp_id }}</td>
+            <td>{{ x.name | slice:":3" | capfirst}}</td>
+            <td>{{ x.salary }}</td>
+            <td>{{ x.city }}</td>
+            <td>{{ x.date }}</td>
+        </tr>
+        {% endfor %} {% endcomment %}
+
+        {% comment %} ======================================== {% endcomment %}
+    </table>
+
 </body>
+
 </html>
