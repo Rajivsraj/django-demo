@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Employee, Employee2
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.models import Group
 
 
 # Create your views here.
@@ -56,14 +58,35 @@ def query_set(request):
     # print(all_emp)
     # print(all_emp.query)
 
-    tbl1 = Employee.objects.values_list("name")
-    tbl2 = Employee2.objects.values_list("name")
-    all_emp = tbl1.union(tbl2, all=True)
-    print(all_emp)
-    print()
-    # print(all_emp.query)
-    print(tbl1)
-    print(tbl2)
-    return render(request, "app1/data.html", context={"employees": ""})
+    # tbl1 = Employee.objects.values_list("name")
+    # tbl2 = Employee2.objects.values_list("name")
+    # all_emp = tbl1.union(tbl2, all=True)
+    # print(all_emp)
+    # print()
+    # # print(all_emp.query)
+    # print(tbl1)
+    # print(tbl2)
+    # return render(request, "app1/data.html", context={"employees": ""})
 
+    # get()
+    # ==============
+    # sq = Employee.objects.get(pk=1)
+    # sq = Employee.objects.get(emp_id=102)
+    # sq = Employee.objects.get(emp_id=111)
 
+    # sq = Employee.objects.get(emp_id=111)
+    # try:
+    #     sq = Employee.objects.get(emp_id=111)
+    # except ObjectDoesNotExist as e:
+    #     if e:
+    #         e = "Data Not Found"
+    #     return render(request, "app1/data.html", context={"error": e})
+
+    # sq = Employee.objects.first()
+    # sq = Employee.objects.last()
+    # sq = Employee.objects.latest("city")
+    # sq = Employee.objects.earliest("date")
+    # sq = Employee.objects.exists()
+    # sq = Group.objects.exists() # check table have some data or not
+    # print(sq)
+    return render(request, "app1/data.html", context={"single": sq})
