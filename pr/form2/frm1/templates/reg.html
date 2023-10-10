@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form novalidate>
+
+    {% for x in form %}
+        {{ x }}
+    {% endfor %}
+{#    INPUT FIELD#}
+{#    {{ form.name }} <br><br>#}
+{#    Value: {{ form.name.value }} <br>#}
+{#    Initial: {{ form.name.initial }} <br>#}
+{#    Is Hidden: {{ form.name.is_hidden }} <br>#}
+{#    Required: {{ form.name.field.required }} <br>#}
+{#    Max Length: {{ form.name.field.max_length }} <br>#}
+{#    Min Length: {{ form.name.field.min_length }} <br>#}
+{#    Help Text: {{ form.name.help_text }} <br>#}
+{#    Min Length: {{ form.name.html_name }} <br>#}
+
+
+{#    {{ form.as_div }} <br><br>#}
+{#    {{ form.as_p }} <br><br>#}
+{#    {{ form.as_ul }} <br><br>#}
+{#    {{ form.as_table }}#}
+
+
+{#    --------------------------- #}
+{#    {{ form.as_div }}<br><br>#}
+{#    {{ form.name.id_for_label }}#}
+{#    {{ form.name.bound_data }}#}
+{#    {{ form.name.label_tag }}<br>#}
+{#    Value: {{ form.name.value }}<br>#}
+{#    {{ form.name.html_name }}<br>#}
+{#    {{ form.name.help_text }}<br>#}
+{#    {{ form.name.field.required }}<br>#}
+{#    ss{{ form.name.required }}<br>#}
+{#    Initial: {{ form.name.initial }}<br>#}
+{#    Is Hidden: {{ form.name.is_hidden }}<br>#}
+{#    Label: {{ form.name.label }}<br>#}
+{#    Name Field: {{ form.name }}<br>#}
+    {#    Label <br>#}
+{#    Label Tag: {{ form.name.label_tag }}<br>#}
+{#    Label Tag Value: {{ form.name.label }}<br>#}
+{#    Label For Attr: {{ form.name.id_for_label }}<br>#}
+{#    Label For Attr: {{ form.name.label_suffix }}<br>#}
+    <br><br>
+    <input type="submit" name="reg" value="Register">
+</form>
+</body>
+</html>
