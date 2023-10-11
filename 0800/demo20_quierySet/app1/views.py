@@ -111,5 +111,29 @@ def query_set(request):
     # data = Employee.objects.get(name="").delete()
     # print(data)
     # data = Employee.objects.filter(salary=None).delete()
-    print(data)
-    return render(request, "app1/data.html", context={"single": data})
+    # print(data)
+    # not working properly - res, bul = Employee.objects.update_or_create(defaults={"city": "Punjab", "name": "Bhaskar"})
+
+    # emps = [
+    #     Employee.objects.create(emp_id=133, name="Abhishek", city="New Delhi", salary=94544),
+    #     Employee.objects.create(emp_id=134, name="Ankit", city="New Delhi", salary=54656),
+    #     Employee.objects.create(emp_id=135, name="Aditya", city="New Delhi", salary=5466),
+    # ]
+    # res = Employee.objects.bulk_create(emps, ignore_conflicts=True)
+    # print(res)
+
+    # all = Employee.objects.all()
+    # for emp in all:
+    #     # print(emp["emp_id"])
+    #     emp.name = "Vikram"
+    #
+    # Employee.objects.bulk_update(all, ["name"])
+
+    # s = Employee.objects.get(pk=34)
+    # s.delete()
+
+    # c = Employee.objects.filter(name="Vikram").count()
+    # c = Employee.objects.filter(salary__gte=50000).count()
+    c = Employee.objects.filter(salary__gte=50000).delete()
+    print(c)
+    return render(request, "app1/data.html", context={"single": "data"})
