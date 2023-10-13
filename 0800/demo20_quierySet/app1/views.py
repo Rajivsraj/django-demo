@@ -173,7 +173,5 @@ def query_set(request):
     # c = Employee.objects.filter(salary__gte=50000).count()
     c = Employee.objects.filter(salary__gte=50000).delete()
     print(c)
-    return render(request, "app1/data.html", context={"single": "data"})
-=======
-    return render(request, "app1/data.html", context={"single": ""})
->>>>>>> 5d6b615aabebe8e5adbdd45e03a5d5c46803d936:demo20_quierySet/app1/views.py
+    # return render(request, "app1/data.html", context={"single": "data"})
+    # return render(request, "app1/data.html", context={"single": ""})
