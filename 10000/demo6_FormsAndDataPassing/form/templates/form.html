@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+
+{#{{ data  }}#}
+<form>
+    <input type="text" name="fname" value="{{ data.fname }}" placeholder="First Name"><br><br>
+    <input type="text" name="lname" value="{{ data.lname }}" placeholder="Last Name"><br><br>
+    <input type="text" name="age" value="{{ data.age }}" placeholder="age"><br><br>
+    <input type="text" name="city" value="{{ data.city }}" placeholder="City"><br><br>
+    <input type="text" name="salary" value="{{ data.salary }}" placeholder="Salary"><br><br>
+    <input type="submit" value="Submit" name="submti">
+</form>
+</body>
+</html>
