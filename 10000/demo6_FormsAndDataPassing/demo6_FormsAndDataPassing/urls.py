@@ -24,4 +24,5 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', views.home),
     path('register/', frm.form_page),
+    path('register2/', frm.register),
 ]
