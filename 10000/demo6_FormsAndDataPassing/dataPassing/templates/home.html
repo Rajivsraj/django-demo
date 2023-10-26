@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Passing</title>
+</head>
+<body>
+{# Djanog Template Language #}
+{#{{ names.name }}#}
+{#{{ names.age }}#}
+
+{% for stu in names.values %}
+    <li>{{ stu }}</li>
+{% endfor %}
+
+<hr>
+{#{{ marks }}#}
+{% for m in marks %}
+    {{ m }}<br>
+{% endfor %}
+<ul>
+    <li>Rahul</li>
+    <li>Sumit</li>
+    <li>Amit</li>
+    <li>Ajay</li>
+</ul>
+
+<hr>
+{#{{ stu_dtails }}#}
+{% for rec in stu_dtails %}
+    {{ rec.rollno }}
+    {{ rec.name }}
+    {{ rec.age }}
+{% endfor %}
+
+
+</body>
+</html>
