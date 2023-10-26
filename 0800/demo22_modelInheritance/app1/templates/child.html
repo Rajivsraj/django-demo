@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Show Child </title>
+</head>
+<body>
+
+<table border='2'>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>GENDER</td>
+        <td>SALARY</td>
+        <td>PROPERTY</td>
+        <td>SCHOOL</td>
+        <td>CNAME</td>
+     
+    </tr>
+    {% for x in all %}
+    <tr>
+        <td>{{x.id}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.gender}}</td>
+        <td>{{x.salary}}</td>
+        <td>{{x.property}}</td>
+        <td>{{x.school}}</td>
+        <td>{{x.cname}}</td>
+        
+    </tr>
+
+    {% endfor %}
+</table>    
+    
+</body>
+</html>
