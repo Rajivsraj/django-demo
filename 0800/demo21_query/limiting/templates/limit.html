@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>sr</td>
+            <td>name</td>
+            <td>age</td>
+            <td>city</td>
+            <td>fees</td>
+        </tr>
+        {% for stu in data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ stu.name }}</td>
+                <td>{{ stu.age }}</td>
+                <td>{{ stu.city }}</td>
+                <td>{{ stu.fees }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+</body>
+</html>

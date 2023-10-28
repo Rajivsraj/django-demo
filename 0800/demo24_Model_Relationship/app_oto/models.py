@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
 
 # One to Many
@@ -24,18 +24,18 @@ from django.contrib.auth.models import User
 
 # Set Default
 # ----------------------------
-class Category(models.Model):
-    cat_name = models.CharField(max_length=60)
+# class Category(models.Model):
+#     cat_name = models.CharField(max_length=60)
+#
+#     def __str__(self):
+#         return self.cat_name
 
-    def __str__(self):
-        return self.cat_name
 
-
-class Product(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default=6)
-    product_name = models.CharField(max_length=60)
-    price = models.IntegerField()
+# class Product(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     category = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default=6)
+#     product_name = models.CharField(max_length=60)
+#     price = models.IntegerField()
 
 
 # Saurav - Phone - Iphone 15 pro utra
@@ -95,3 +95,20 @@ class Product(models.Model):
 #     skt = models.IntegerField()
 #     total = models.IntegerField()
 #     average = models.IntegerField()
+
+
+class Teacher(models.Model):
+    t_name = models.CharField(max_length=60)
+    quali = models.CharField(max_length=60)
+    salary = models.IntegerField()
+
+    def __str__(self):
+        return self.t_name
+
+
+class Student(models.Model):
+    teacher = models.ManyToManyField(Teacher)
+    s_name = models.CharField(max_length=60)
+    city = models.CharField(max_length=60)
+    age = models.CharField(max_length=60)
+
