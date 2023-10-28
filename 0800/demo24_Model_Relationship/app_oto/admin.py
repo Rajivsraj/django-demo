@@ -30,13 +30,26 @@ from django.contrib import admin
 #     list_display = ["user", "course_name", "duration"]
 
 # -------------------------
-from .models import Category, Product
+# from .models import Category, Product
+#
+# @admin.register(Category)
+# class CategoryAdmin(admin.ModelAdmin):
+#     list_display = ["cat_name"]
+#
+#
+# @admin.register(Product)
+# class CategoryAdmin(admin.ModelAdmin):
+#     list_display = ["product_name", "price", "category", "user"]
 
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ["cat_name"]
+
+from .models import Teacher, Student
 
 
-@admin.register(Product)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ["product_name", "price", "category", "user"]
+@admin.register(Teacher)
+class TeacherAdmin(admin.ModelAdmin):
+    list_display = ["t_name", "quali", "salary"]
+
+
+@admin.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ["s_name", "city", "age"]

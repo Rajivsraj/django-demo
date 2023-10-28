@@ -54,7 +54,7 @@
             <td>Salary</td>
             <td>City</td>
         </tr>
-        {% for employee in employees %}
+        {% for employee in single %}
         <tr>
             <td>{{ employee.id }}</td>
             <td>{{ employee.name | slice:":3" | capfirst}}</td>
@@ -63,15 +63,8 @@
         </tr>
         {% endfor %}
 
-        {# {% for employee in employees.values %}#}
-        {# <tr>#}
-            {# <td>{{ employee.id }}</td>#}
-            {# <td>{{ employee.name | slice:":3" | capfirst}}</td>#}
-            {# <td>{{ employee.salary }}</td>#}
-            {# <td>{{ employee.city }}</td>#}
-        {# </tr>#}
-        {# {% endfor %}#}
-
+         
+    </table>
 <table border="1">
     <tr>
         <td>pk</td>
