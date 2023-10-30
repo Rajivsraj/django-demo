@@ -24,4 +24,5 @@ urlpatterns = [
     path("register/", views.register),
     path("register-post/", views.register_post),
     path("form-api/", api.register_frm_api),
+    path("form-idattr/", api.register_id_attr),
 ]
