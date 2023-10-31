@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{{ data }}
+{##}
+{#<table border="1">#}
+{#    <tr>#}
+{#        <td>Sr. NO</td>#}
+{#        <td>ID</td>#}
+{#        <td>COURSE NAME</td>#}
+{#        <td>DURATION</td>#}
+{#        <td>USERNAME</td>#}
+{#    </tr>#}
+{#    {% for row in data %}#}
+{#    <tr>#}
+{#        <td>{{ forloop.counter }}</td>#}
+{#        <td>{{ row.id }}</td>#}
+{#        <td>{{ row.course_name}}</td>#}
+{#        <td>{{ row.duration }}</td>#}
+{#        <td>{{ row.user }}</td>#}
+{#    </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+
+<h2>Ankit</h2>
+
+<table border="1">
+    <tr>
+        <td>Sr. NO</td>
+        <td>ID</td>
+        <td>COURSE NAME</td>
+        <td>DURATION</td>
+        <td>USERNAME</td>
+    </tr>
+    {% for row in ankit %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ row.id }}</td>
+        <td>{{ row.course_name}}</td>
+        <td>{{ row.duration }}</td>
+        <td>{{ row.user }}</td>
+{#        <td>{{ row.id_ }}</td>#}
+{#        <td>{{ row.user }}</td>#}
+{#        <td>{{ row.user }}</td>#}
+    </tr>
+    {% endfor %}
+</table>
+
+{##}
+{#<h2>All Users</h2>#}
+{##}
+{#<table border="1">#}
+{#    <tr>#}
+{#        <td>Sr. NO</td>#}
+{#        <td>ID</td>#}
+{#        <td>USERNAME</td>#}
+{#        <td>EMAIL</td>#}
+{#        <td>PASSWORD</td>#}
+{#    </tr>#}
+{#    {% for row in users %}#}
+{#    <tr>#}
+{#        <td>{{ forloop.counter }}</td>#}
+{#        <td>{{ row.id }}</td>#}
+{#        <td>{{ row.username}}</td>#}
+{#        <td>{{ row.email }}</td>#}
+{#        <td>{{ row.password }}</td>#}
+{#    </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+{##}
+{##}
+{#<h2>COurse by user</h2>#}
+{##}
+{#<table border="1">#}
+{#    <tr>#}
+{#        <td>Sr. NO</td>#}
+{#        <td>ID</td>#}
+{#        <td>USERNAME</td>#}
+{#        <td>EMAIL</td>#}
+{#        <td>PASSWORD</td>#}
+{#    </tr>#}
+{#    {% for row in sw %}#}
+{#    <tr>#}
+{#        <td>{{ forloop.counter }}</td>#}
+{#        <td>{{ row.id }}</td>#}
+{#        <td>{{ row.username}}</td>#}
+{#        <td>{{ row.email }}</td>#}
+{#        <td>{{ row.password }}</td>#}
+{#        <td>{{ row.username }}</td>#}
+{#        <td>{{ row.password }}</td>#}
+{#        <td>{{ row.password }}</td>#}
+{#    </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+</body>
+</html>

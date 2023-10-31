@@ -20,4 +20,5 @@ from app_oto import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path("", views.show_data),
+    path("data/", views.show_rec)
 ]

@@ -1,13 +1,13 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 
 # One to Many
 # =====================================================
-# class Course(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     course_name = models.CharField(max_length=60)
-#     duration = models.IntegerField()
+class Course(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    course_name = models.CharField(max_length=60)
+    duration = models.IntegerField()
 
 # PROTECTED
 # class Course(models.Model):
@@ -97,18 +97,20 @@ from django.db import models
 #     average = models.IntegerField()
 
 
-class Teacher(models.Model):
-    t_name = models.CharField(max_length=60)
-    quali = models.CharField(max_length=60)
-    salary = models.IntegerField()
+# class Teacher(models.Model):
+#     t_name = models.CharField(max_length=60)
+#     quali = models.CharField(max_length=60)
+#     salary = models.IntegerField()
+#
+#     def __str__(self):
+#         return self.t_name
+#
+#
+# class Student(models.Model):
+#     teacher = models.ManyToManyField(Teacher)
+#     s_name = models.CharField(max_length=60)
+#     city = models.CharField(max_length=60)
+#     age = models.CharField(max_length=60)
 
-    def __str__(self):
-        return self.t_name
 
-
-class Student(models.Model):
-    teacher = models.ManyToManyField(Teacher)
-    s_name = models.CharField(max_length=60)
-    city = models.CharField(max_length=60)
-    age = models.CharField(max_length=60)
 

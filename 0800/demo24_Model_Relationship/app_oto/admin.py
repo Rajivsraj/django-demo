@@ -22,12 +22,12 @@ from django.contrib import admin
 
 # One To Many
 # ========================================================================
-# from .models import Course
+from .models import Course
 
 
-# @admin.register(Course)
-# class CourseAdmin(admin.ModelAdmin):
-#     list_display = ["user", "course_name", "duration"]
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ["user", "course_name", "duration"]
 
 # -------------------------
 # from .models import Category, Product
@@ -42,14 +42,14 @@ from django.contrib import admin
 #     list_display = ["product_name", "price", "category", "user"]
 
 
-from .models import Teacher, Student
-
-
-@admin.register(Teacher)
-class TeacherAdmin(admin.ModelAdmin):
-    list_display = ["t_name", "quali", "salary"]
-
-
-@admin.register(Student)
-class StudentAdmin(admin.ModelAdmin):
-    list_display = ["s_name", "city", "age"]
+# from .models import Teacher, Student
+#
+#
+# @admin.register(Teacher)
+# class TeacherAdmin(admin.ModelAdmin):
+#     list_display = ["t_name", "quali", "salary"]
+#
+#
+# @admin.register(Student)
+# class StudentAdmin(admin.ModelAdmin):
+#     list_display = ["s_name", "city", "age"]
