@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{#{{ form.as_p }}#}
+
+{#{{ form.first_name.label_tag }}#}
+{#{{ form.first_name.label }}#}
+{#{{ form.first_name.id_for_label }}#}
+<hr>
+
+{# Custom rendering#}
+{#<label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>#}
+{#<input type="text" id="{{ form.first_name.id_for_label }}">#}
+{#<br><br>#}
+{#<label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>#}
+{#<input type="text" id="{{ form.last_name.id_for_label }}">#}
+{#<br><br>#}
+{#<label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>#}
+{#<input type="text" id="{{ form.password.id_for_label }}">#}
+
+{#<form>#}
+{#{{ form.first_name }}#}
+{#{{ form.first_name.value }}#}
+{#{{ form.first_name.required }}#}
+{#{{ form.first_name.field.min_length }}#}
+{#{{ form.first_name.field.max_length }}#}
+{#<input type="submit" value="subit">#}
+{#</form>#}
+{##}
+{#{{ form.first_name.field.required }}#}
+
+
+<form novalidate>
+    {% csrf_token %}
+    {% for frm in form %}
+    {{ frm.label_tag }}
+    {{ frm }}
+{% endfor %}
+    <input type="submit">
+</form>
+</body>
+</html>
