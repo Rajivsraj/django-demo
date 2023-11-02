@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from from1 import views
 from form2 import views as api
+from form3 import views as frm3
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,5 @@ urlpatterns = [
     path("form-api/", api.register_frm_api),
     path("form-idattr/", api.register_id_attr),
     path("form/", api.register_frm2),
+    path("form3/", frm3.register)
 ]
