@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "from1",
     "form2",
     "form3",
+    "form_validation",
 ]
 
 MIDDLEWARE = [

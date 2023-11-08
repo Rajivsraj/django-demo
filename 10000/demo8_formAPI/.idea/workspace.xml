@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo8_formAPI/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo8_formAPI/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo8_formAPI/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo8_formAPI/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/form3/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/form3/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/form3/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/form3/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +22,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="ProjectId" id="2XNsHfFbNh0BJEFSDrxmWJyRQKb" />
   <component name="ProjectLevelVcsManager">
@@ -96,7 +103,9 @@
       <workItem from="1698480789616" duration="3135000" />
       <workItem from="1698682754132" duration="1599000" />
       <workItem from="1698767693173" duration="2507000" />
-      <workItem from="1698940085542" duration="2612000" />
+      <workItem from="1698940085542" duration="2888000" />
+      <workItem from="1699108140781" duration="2189000" />
+      <workItem from="1699459174079" duration="2581000" />
     </task>
     <servers />
   </component>
@@ -108,7 +117,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/demo8_formAPI/urls.py</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

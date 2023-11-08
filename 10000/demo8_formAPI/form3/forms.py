@@ -1,9 +1,18 @@
 from django import forms
 
 
+# 04/11/2023
+# validation
+class RegistrationFormValidation(forms.Form):
+    fullname = forms.CharField(min_length=2)
+    username = forms.CharField(min_length=5)
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput, min_length=8)
+
+
 # Built-in Form Fields
-class RegistrationForm(forms.Form):
-    username = forms.BooleanField()
+# class RegistrationForm(forms.Form):
+#     username = forms.BooleanField()
 
 
 

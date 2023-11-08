@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+</head>
+<body>
+
+<style>
+    .errorlist{
+        color: red;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+    }
+</style>
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ frm.as_p }}
+    <input type="submit" value="Register">
+</form>
+
+</body>
+</html>

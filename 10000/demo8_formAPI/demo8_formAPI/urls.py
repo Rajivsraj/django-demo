@@ -19,13 +19,18 @@ from django.urls import path
 from from1 import views
 from form2 import views as api
 from form3 import views as frm3
+from form_validation import views as fv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("register/", views.register),
-    path("register-post/", views.register_post),
-    path("form-api/", api.register_frm_api),
-    path("form-idattr/", api.register_id_attr),
-    path("form/", api.register_frm2),
-    path("form3/", frm3.register)
+    # path("register/", views.register),
+    # path("register-post/", views.register_post),
+    # path("form-api/", api.register_frm_api),
+    # path("form-idattr/", api.register_id_attr),
+    # path("form/", api.register_frm2),
+    # path("form3/", frm3.register)
+
+    path("validation/", frm3.register_frm_validation),
+    path("validation2/", fv.frm_validation),
+
 ]
