@@ -32,5 +32,6 @@ urlpatterns = [
 
     path("validation/", frm3.register_frm_validation),
     path("validation2/", fv.frm_validation),
+    path("user-registration/", fv.user_registration),
 
 ]

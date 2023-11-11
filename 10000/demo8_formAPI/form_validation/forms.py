@@ -1,5 +1,27 @@
 from django import forms
+from django.core import validators
 
+def start_with_r(val):
+    if val[0] != "s":
+        raise forms.ValidationError("Username must be start from S char")
+
+def maxlen_err(val):
+    if len(val) <= 2:
+        raise forms.ValidationError("Len must be > 2")
+
+class RegistrationForm(forms.Form):
+    # username = forms.CharField(min_length=2)
+    # username = forms.CharField()
+    username = forms.CharField(validators=[start_with_r, maxlen_err])
+    phone = forms.CharField(validators=[validators.int_list_validator(message="Enter Numbers only"), validators.MaxLengthValidator(10), validators.MinLengthValidator(10)])
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(widget=forms.PasswordInput)
+
+    # def clean_username(self):
+    #     username = self.cleaned_data.get("username")
+    #     if len(username) < 2:
+    #         raise forms.ValidationError("Enter >2 chars")
 
 class Form1(forms.Form):
     fname = forms.CharField()

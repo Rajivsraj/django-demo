@@ -1,5 +1,13 @@
 from django.shortcuts import render
-from .forms import Form1
+from .forms import Form1, RegistrationForm
+
+
+def user_registration(request):
+    if request.method == "POST":
+        frm = RegistrationForm(request.POST)
+    else:
+        frm = RegistrationForm()
+    return render(request, "validations/registration.html", context={"frm": frm})
 
 # after form submission successfully data should not be shown into the field
 # Create your views here.
