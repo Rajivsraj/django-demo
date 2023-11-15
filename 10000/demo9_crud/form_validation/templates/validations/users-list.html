@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div class="container p-5">
+    <h1 class="text-center">Users List</h1>
+    <table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th>Sr.no</th>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Username</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ user.id }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.password }}</td>
+      <td>
+          Edit |
+          <a href="{% url 'users_list' user.id %}" class="text-decoration-none">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</body>
+</html>
