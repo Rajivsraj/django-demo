@@ -12,11 +12,12 @@ def maxlen_err(val):
 class RegistrationForm(forms.Form):
     # username = forms.CharField(min_length=2)
     # username = forms.CharField()
-    username = forms.CharField(validators=[start_with_r, maxlen_err])
-    phone = forms.CharField(validators=[validators.int_list_validator(message="Enter Numbers only"), validators.MaxLengthValidator(10), validators.MinLengthValidator(10)])
-    email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
-    password2 = forms.CharField(widget=forms.PasswordInput)
+    first_name = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control form-control-sm"}), max_length=8, error_messages={"required": "This field is required custom", "max_length": "size exceed"})
+    username = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control form-control-sm"}), validators=[start_with_r, maxlen_err])
+    phone = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control form-control-sm"}), validators=[validators.int_list_validator(message="Enter Numbers only"), validators.MaxLengthValidator(10), validators.MinLengthValidator(10)])
+    email = forms.EmailField(widget=forms.EmailInput(attrs={"class": "form-control form-control-sm"}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={"class": "form-control form-control-sm"}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={"class": "form-control form-control-sm"}))
 
     # def clean_username(self):
     #     username = self.cleaned_data.get("username")

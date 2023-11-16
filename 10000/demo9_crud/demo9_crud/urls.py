@@ -21,7 +21,9 @@ from form_validation import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
-    path('register/', views.register),
+    path('register/', views.register, name="register_user"),
     path('users-list/', views.users_list, name="users_list"),
     path('users-list/<int:id>', views.delete_user, name="users_list"),
+
+    path('update-user/<int:id>', views.update_user, name="update_user"),
 ]

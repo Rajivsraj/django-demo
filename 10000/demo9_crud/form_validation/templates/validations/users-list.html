@@ -10,36 +10,37 @@
 <div class="container p-5">
     <h1 class="text-center">Users List</h1>
     <table class="table table-dark table-hover">
-  <thead>
-    <tr>
-      <th>Sr.no</th>
-      <th>ID</th>
-      <th>First Name</th>
-      <th>Username</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for user in users %}
-    <tr>
-      <th scope="row">{{ forloop.counter }}</th>
-      <td>{{ user.id }}</td>
-      <td>{{ user.first_name }}</td>
-      <td>{{ user.username }}</td>
-      <td>{{ user.phone }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.password }}</td>
-      <td>
-          Edit |
-          <a href="{% url 'users_list' user.id %}" class="text-decoration-none">Delete</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+        <thead>
+        <tr>
+            <th>Sr.no</th>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Username</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ user.id }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+                <td>
+                    <a href="{% url 'update_user' user.id %}" class="text-decoration-none">Edit</a>
+                    |
+                    <a href="{% url 'users_list' user.id %}" class="text-decoration-none">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
