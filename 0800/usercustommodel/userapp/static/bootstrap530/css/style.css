@@ -1,0 +1,43 @@
+.social-icons{
+    font-size: 30px;
+}
+
+.animation-grow{
+    transform: scale(1);
+    transition: transform 1s;
+    padding-top: 0.5;
+    padding: 15px;
+}
+
+.animation-grow:hover{
+    transform: scale(1.10);
+}
+
+/* COURSES  PAGE */
+.courses .col img{
+    width: 50px;
+    margin: auto;
+
+}
+
+
+/* SHUTTER */
+.shutter-left{
+    background-color: red;
+    position: absolute;
+    height: 100%;
+    width: 0px;
+    overflow: hidden;
+    transition: width 2s;
+    animation: shutter 5s infinite;
+}
+
+@keyframes shutter{
+    0%{background-color: black;}
+    10%{background-color: teal;}
+    20%{background-color: orangered;}
+}
+
+.animation-grow:hover .shutter-left{
+    width: 100%;
+}

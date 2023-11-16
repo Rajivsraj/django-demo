@@ -1,0 +1,29 @@
+#warn{display: none;}
+
+.errorcontainer {
+
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(255, 0, 0);
+    height: 40px;
+}
+
+small {
+    font-size: 12px;
+    color: red;
+}
+
+
+
+.sucsess {
+    font-size: 16px;
+    color:green;
+}
+
+
+
+
+
+
