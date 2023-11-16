@@ -470,22 +470,22 @@ function password_pattern(){
 // =============================================================================================================================
 // Register form checkbox validation to check one box at a time
 
-function register_checkbox_val(){
-    parent_checkbox = document.forms["register"]["is_parent"].checked;
-    faculty_checkbox = document.forms["register"]["is_faculty"].checked;
+// function register_checkbox_val(){
+//     parent_checkbox = document.forms["register"]["is_parent"].checked;
+//     faculty_checkbox = document.forms["register"]["is_faculty"].checked;
 
 
-    print("hjdsfgyjxskjhfgdkusisuhhdhfdhfiusdf")
+//     print("hjdsfgyjxskjhfgdkusisuhhdhfdhfiusdf")
 
-    if(parent_checkbox == true){
-        faculty_checkbox.checked = false
-    }
+//     if(parent_checkbox == true){
+//         faculty_checkbox.checked = false
+//     }
 
-    if(faculty_checkbox == true){
-        parent_checkbox = document.forms["register"]["is_parent"].checked;
-        parent_checkbox.checked = false
-    }
-}
+//     if(faculty_checkbox == true){
+//         parent_checkbox = document.forms["register"]["is_parent"].checked;
+//         parent_checkbox.checked = false
+//     }
+// }
 
 
 

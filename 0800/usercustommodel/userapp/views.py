@@ -47,36 +47,24 @@ def Stu_Register(request):
         isparent = request.POST.get('is_parent')
         isstaff = request.POST.get('is_faculty')
 
+        print(isparent)
+        print(isstaff)
+
         if isparent == 'on':
-            if isstaff == 'on':
-                isstaff = True
-                isparent = True
-                print(isparent)
-                print(isstaff)
-                data.fullname = request.POST.get("name")
-                data.password = make_password(request.POST.get("password"))
-                # data.cnfrm_passw = request.POST.get("repassword")
-                data.is_parent = isparent
-                data.is_staff = isstaff
-                messages.success(request, "Registration Sucsessfull")
-                print(request.POST.get('is_parent'))
-                data.save()
-                return HttpResponse("Parent and staff both are on")
-            else:
-                isparent = True
-                isstaff = False
-                print(isparent)
-                print(isstaff)
-                data.fullname = request.POST.get("name")
-                data.password = make_password(request.POST.get("password"))
-                # data.cnfrm_passw = request.POST.get("repassword")
-                data.is_parent = isparent
-                data.is_staff = isstaff
-                messages.success(request, "Registration Sucsessfull")
-                print(request.POST.get('is_parent'))
-                data.save()
-                return HttpResponse("Only parent is On")
-            
+            isparent = True
+            isstaff = False
+            print(isparent)
+            print(isstaff)
+            data.fullname = request.POST.get("name")
+            data.password = make_password(request.POST.get("password"))
+            # data.cnfrm_passw = request.POST.get("repassword")
+            # data.is_parent = isparent
+            # data.is_staff = isstaff
+            messages.success(request, "Registration Sucsessfull")
+            print(request.POST.get('is_parent'))
+            data.save()
+            return HttpResponse("Parent and staff both are on")
+
         elif isstaff == 'on':
                 isstaff = True
                 isparent = False
@@ -99,8 +87,8 @@ def Stu_Register(request):
             data.fullname = request.POST.get("name")
             data.password = make_password(request.POST.get("password"))
             data.cnfrm_passw = request.POST.get("repassword")
-            data.is_parent = isparent
-            data.is_staff = isstaff
+            # data.is_parent = isparent
+            # data.is_staff = isstaff
             messages.success(request, "Registration Sucsessfull")
             print(request.POST.get('is_parent'))
             data.save()
@@ -125,18 +113,22 @@ def user_login(request):
             is_parent = frm.cleaned_data.get("is_parent")
             is_staff = frm.cleaned_data.get("is_staff")
 
-            checked_password = request.user.password
-            
+            # checked_password = request.user.password
+            print(is_parent)
+            print(is_staff)
             usr = authenticate(email = usern, password = passw)
             # pswd = usr.password
             if usr is not None:
                 # print(passw)
+    
                 if usr.is_parent == True:
+                    print(usr.is_parent)
                     login(request, usr)
                     # print(usr.password)
                     # return redirect("dashboard")
                     return HttpResponse("This is parent Dashboard")
                 elif usr.is_staff == True:
+                    print(usr.is_parent)
                     login(request, usr)
                     # print(usr.password)
                     # return redirect("dashboard")
@@ -145,7 +137,7 @@ def user_login(request):
                     login(request, usr)
                     # print(usr.password)
                     # return redirect("dashboard")
-                    return HttpResponse("This is parent Dashboard")
+                    return HttpResponse("This is Student Dashboard")
             else:
                 print("chal bhakk")
     return render(request, "core/login.html", context={"frm": frm})
