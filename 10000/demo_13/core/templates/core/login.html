@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+
+
+{% if messages %}
+    {% for msg in messages %}
+        {{ mgs.tags }} {{ msg }}
+    {% endfor %}
+{% endif %}
+<form novalidate method="post">
+
+    {% if form.errors %}
+        {{ form.non_field_errors|striptags }}
+    {% endif  %}
+
+    {% csrf_token %}
+    {% for frm in form %}
+
+        <p>{{ frm.label_tag }}{{ frm }}{{ frm.errors }}
+
+        </p>
+    {% endfor %}
+
+    <button type="submit">Login</button>
+    <a href="{% url "register" %}">Register</a>
+</form>
+</body>
+</html>

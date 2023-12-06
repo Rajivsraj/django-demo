@@ -11,7 +11,7 @@
     {% csrf_token %}
 
     {% for frm in form %}
-        {{frm}}
+        {{ frm.label_tag }}{{frm}} {{ frm.help_text }}<br>
         {% for err in frm.errors %}
             {{err}}
         {% endfor %}

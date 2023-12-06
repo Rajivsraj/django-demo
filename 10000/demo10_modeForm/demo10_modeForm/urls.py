@@ -20,5 +20,7 @@ from modelForm import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("regiter/", views.user_registration)
+    path("register/", views.user_registration),
+    path("stu_registeration", views.student_details),
+    path("teacher_registeration", views.teacher_details),
 ]

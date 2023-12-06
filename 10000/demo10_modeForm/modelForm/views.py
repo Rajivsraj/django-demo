@@ -1,6 +1,17 @@
 from django.shortcuts import render
 from .models import Register
-from .forms import RegistrationForm
+from .forms import RegistrationForm, StudentForm, TeacherForm
+
+
+def student_details(request):
+    frm = StudentForm()
+    return render(request, "student.html", context={"form": frm})
+
+
+def teacher_details(request):
+    frm = TeacherForm()
+    frm.order_fields(["teacher_name", "username","phone"])
+    return render(request, "teacher.html", context={"form": frm})
 
 
 # Create your views here.
