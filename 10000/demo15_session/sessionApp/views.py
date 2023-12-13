@@ -38,11 +38,11 @@ def get_session(request):
 
 def del_session(request):
     # del request.session["sdlkfklsd"]
-
-    if "cmtid" in request.session:
-        del request.session["cmtid"]
-        res = "deleted"
-    else:
-        res = "key not found or this session not exists"
-
+    request.session.flush()
+    # if "cmtid" in request.session:
+    #     del request.session["cmtid"]
+    #     res = "deleted"
+    # else:
+    #     res = "key not found or this session not exists"
+    res = "nothing"
     return render(request, template_name="del-session.html", context={"result": res})
