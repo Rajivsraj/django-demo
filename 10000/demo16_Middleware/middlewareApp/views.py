@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from middlewareApp.middlewares import my_middleware
 from django.utils.decorators import decorator_from_middleware
-
+from .middlewares import my_middleware, session_check
 
 # Create your views here.
 def home(request):
@@ -12,9 +12,10 @@ def home(request):
 
 
 def login(request):
-    return HttpResponse("Login")
+    return render(request, template_name="login.html")
 
 
+@session_check
 def profile(request):
     print("profile function done")
     p_data = "hello profile"
